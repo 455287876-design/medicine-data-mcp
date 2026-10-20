@@ -3,8 +3,13 @@
   "name": "com.shanchuangkj/medicine-data",
   "title": "MedicineData MCP",
   "description": "Chinese pharma database MCP: 21 tools for drugs, targets, trials, deals, patents, sales.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://medicine.shanchuangkj.com/mcp",
+  "repository": {
+    "url": "https://github.com/455287876-design/medicine-data-mcp",
+    "source": "github",
+    "id": "1426385844"
+  },
   "icons": [
     {
       "src": "https://medicine.shanchuangkj.com/logo.png",
