@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.shanchuangkj/medicine-data",
+  "title": "MedicineData MCP",
+  "description": "Chinese pharma database MCP: 21 tools for drugs, targets, trials, deals, patents, sales.",
+  "version": "1.0.0",
+  "websiteUrl": "https://medicine.shanchuangkj.com/mcp",
+  "icons": [
+    {
+      "src": "https://medicine.shanchuangkj.com/logo.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://medicine.shanchuangkj.com/mcp/",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "API key from https://medicine.shanchuangkj.com/mcp (free 100 calls on signup).",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
