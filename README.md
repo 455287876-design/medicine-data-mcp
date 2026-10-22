@@ -1,11 +1,11 @@
 # MedicineData MCP · 医药数据社
 
-Remote [Model Context Protocol](https://modelcontextprotocol.io) server for a **Chinese pharmaceutical industry database**. 21 read-only tools connect Claude, Cursor, Cline or any Streamable HTTP MCP client to drug pipelines, targets, indications, clinical trials, companies, licensing deals, VC funding, patents, conference abstracts and drug sales.
+Remote [Model Context Protocol](https://modelcontextprotocol.io) server for a **Chinese pharmaceutical industry database**. 21 billed read-only tools plus a free `list_capabilities` catalogue connect Claude, Cursor, Cline or any Streamable HTTP MCP client to drug pipelines, targets, indications, clinical trials, companies, licensing deals, VC funding, patents, conference abstracts and drug sales.
 
 - **Endpoint**: `https://medicine.shanchuangkj.com/mcp/`
 - **Transport**: Streamable HTTP (stateless)
 - **Auth**: header `X-API-Key: mds-...`
-- **Get a key**: <https://medicine.shanchuangkj.com/mcp> — free 100 calls for new accounts
+- **Get a key**: <https://medicine.shanchuangkj.com/mcp> — 2,000 free rows for new accounts
 - **Official MCP Registry**: `com.shanchuangkj/medicine-data`
 
 ## Quick start
@@ -28,7 +28,7 @@ Claude Desktop / Claude Code / Cursor:
 
 Call `list_capabilities` first — it is free and returns the full catalogue, limits and plans. The metadata handshake (`initialize`, `tools/list`) is open so directories can verify the server; every `tools/call` requires a key.
 
-## Tools (21 billed + 1 free)
+## Tools (21 billed + 1 free, 22 total)
 
 | Domain | Tools |
 | --- | --- |
@@ -48,12 +48,13 @@ Data scale: 76k drugs, 9.5k targets, 8.7k indications, 26k China-registered tria
 
 ## Pricing
 
-- New account: 100 calls free, valid 7 days
-- Trial ¥9.9: 100 calls / 7 days
-- Weekly ¥39: 500 calls/day / 7 days
-- Monthly ¥99: 500 calls/day / 30 days
-- Non-expiring top-ups: 100 calls ¥9.9 · 300 ¥19.9 · 1,000 ¥49.9 · 5,000 ¥199 · 15,000 ¥499
-- Rate limits: 60 requests/minute, 2 concurrent, 32KB max response (larger queries return an error, never a truncated result)
+Billed per **row actually returned** (0 rows, bad parameters and server errors are free; subscription calls do not consume the top-up balance — they count against the daily row quota instead).
+
+- New account: 2,000 rows free, valid 7 days
+- Weekly ¥39: up to 5,000 rows/day / 7 days
+- Monthly ¥99: up to 5,000 rows/day / 30 days
+- Non-expiring top-ups: 3,000 rows ¥9.9 · 8,000 ¥19.9 · 25,000 ¥49.9 · 125,000 ¥199 · 400,000 ¥499
+- Rate limits: 60 requests/minute, 32KB max response (larger queries return an error, never a truncated result)
 
 Prices and limits are served live by `list_capabilities`; the website is the source of truth.
 
