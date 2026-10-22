@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.shanchuangkj/medicine-data",
   "title": "MedicineData MCP",
-  "description": "Chinese pharma database MCP: 21 tools for drugs, targets, trials, deals, patents, sales.",
-  "version": "1.0.1",
+  "description": "Chinese pharma data MCP: 22 tools covering drugs, trials, deals, patents, sales. Per-row billing.",
+  "version": "1.0.2",
   "websiteUrl": "https://medicine.shanchuangkj.com/mcp",
   "repository": {
     "url": "https://github.com/455287876-design/medicine-data-mcp",
@@ -24,7 +24,7 @@
       "headers": [
         {
           "name": "X-API-Key",
-          "description": "API key from https://medicine.shanchuangkj.com/mcp (free 100 calls on signup).",
+          "description": "API key from https://medicine.shanchuangkj.com/mcp (2,000 free rows on signup).",
           "isRequired": true,
           "isSecret": true
         }
